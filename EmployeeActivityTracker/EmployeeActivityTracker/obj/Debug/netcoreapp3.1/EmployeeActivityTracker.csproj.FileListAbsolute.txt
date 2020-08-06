@@ -2,7 +2,6 @@ F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivi
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Debug\netcoreapp3.1\appsettings.json
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Debug\netcoreapp3.1\EmployeeActivityTracker.exe
-F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Debug\netcoreapp3.1\EmployeeActivityTracker.csprojAssemblyReference.cache
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Debug\netcoreapp3.1\EmployeeActivityTracker.AssemblyInfoInputs.cache
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Debug\netcoreapp3.1\EmployeeActivityTracker.AssemblyInfo.cs
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Debug\netcoreapp3.1\EmployeeActivityTracker.RazorTargetAssemblyInfo.cache

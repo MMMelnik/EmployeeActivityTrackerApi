@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace EmployeeActivityTracker.Models
+﻿namespace EmployeeActivityTracker.Models
 {
     public class Role
     {

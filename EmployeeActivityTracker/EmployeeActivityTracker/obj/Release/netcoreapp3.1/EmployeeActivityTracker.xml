@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EmployeeActivityTracker</name>
+    </assembly>
+    <members>
+        <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.GetActivitiesPerDay(System.Int32,System.DateTime)">
+            <summary>
+            Returns activities by employee id and date.
+            </summary>
+            <param name="employeeId"></param>
+            <param name="date"></param>
+            <returns>List of Activities.</returns>
+        </member>
+        <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.GetActivitiesReport(System.Int32,System.DateTime)">
+             <summary>
+             Returns activities report.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 report/
+                 {
+                     "employeeId": 1,
+                     "date": 2020-06-08
+                 }
+            
+             </remarks>
+             <param name="employeeId"></param>
+             <param name="date"></param>
+             <returns>String with activity report.</returns>
+        </member>
+    </members>
+</doc>

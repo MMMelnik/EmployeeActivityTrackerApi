@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace EmployeeActivityTracker.Models
 {
@@ -13,5 +13,6 @@ namespace EmployeeActivityTracker.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public Sex Sex { get; set; }
+        public DateTime DateOfBirth { get; set; }
     }
 }

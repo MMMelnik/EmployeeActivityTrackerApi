@@ -22,7 +22,8 @@ namespace EmployeeActivityTracker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ActivityTrackerContext>(opt =>
-                opt.UseInMemoryDatabase("ActivityTrackerDB"));
+                opt.UseInMemoryDatabase("ActivityTrackerDB")
+            );
             services.AddControllers();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
@@ -61,11 +62,8 @@ namespace EmployeeActivityTracker
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

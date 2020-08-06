@@ -7,6 +7,7 @@ namespace EmployeeActivityTracker.Models
         public ActivityTrackerContext(DbContextOptions<ActivityTrackerContext> options)
             : base(options)
         {
+            
         }
 
         public DbSet<Activity> Activities { get; set; }
