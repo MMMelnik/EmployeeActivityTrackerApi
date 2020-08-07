@@ -161,7 +161,7 @@ namespace EmployeeActivityTracker.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     /1/2020-08-07
+        ///     /1/2020-08-03
         ///
         /// </remarks>
         /// <param name="employeeId"></param>
@@ -185,6 +185,12 @@ namespace EmployeeActivityTracker.Controllers
         /// <summary>
         /// Returns all employee`s activities per specified week.
         /// </summary>
+        /// <remarks>
+        ///  Sample request:
+        ///
+        ///     /1/32
+        ///
+        /// </remarks>
         /// <param name="employeeId"></param>
         /// <param name="weekNumber"></param>
         /// <returns>List of Activities.</returns>

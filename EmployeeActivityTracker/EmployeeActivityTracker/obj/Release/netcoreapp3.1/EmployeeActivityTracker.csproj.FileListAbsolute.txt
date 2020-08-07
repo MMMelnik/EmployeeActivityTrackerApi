@@ -160,6 +160,9 @@ F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivi
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Sinks.Console.dll
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Sinks.Debug.dll
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Sinks.File.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Extensions.Logging.File.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Sinks.Async.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Sinks.RollingFile.dll
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.csproj.CoreCompileInputs.cache
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.MvcApplicationPartsAssemblyInfo.cs
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.MvcApplicationPartsAssemblyInfo.cache

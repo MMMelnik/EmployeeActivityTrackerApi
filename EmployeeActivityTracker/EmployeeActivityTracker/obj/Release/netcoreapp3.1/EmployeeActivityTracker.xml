@@ -24,7 +24,7 @@
              <remarks>
              Sample request:
             
-                 /1/2020-08-07
+                 /1/2020-08-03
             
              </remarks>
              <param name="employeeId"></param>
@@ -32,12 +32,18 @@
              <returns>List of Activities.</returns>
         </member>
         <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.GetActivitiesPerWeek(System.Int32,System.Int32)">
-            <summary>
-            Returns all employee`s activities per specified week.
-            </summary>
-            <param name="employeeId"></param>
-            <param name="weekNumber"></param>
-            <returns>List of Activities.</returns>
+             <summary>
+             Returns all employee`s activities per specified week.
+             </summary>
+             <remarks>
+              Sample request:
+            
+                 /1/32
+            
+             </remarks>
+             <param name="employeeId"></param>
+             <param name="weekNumber"></param>
+             <returns>List of Activities.</returns>
         </member>
         <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.GetActivitiesReport(System.Int32,System.DateTime)">
              <summary>
