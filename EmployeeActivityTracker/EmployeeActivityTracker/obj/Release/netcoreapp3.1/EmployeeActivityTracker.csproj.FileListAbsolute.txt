@@ -142,9 +142,6 @@ F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivi
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.AssemblyInfoInputs.cache
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.AssemblyInfo.cs
-F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.csproj.CoreCompileInputs.cache
-F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.MvcApplicationPartsAssemblyInfo.cs
-F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.MvcApplicationPartsAssemblyInfo.cache
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.RazorTargetAssemblyInfo.cache
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.csproj.CopyComplete
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\staticwebassets\EmployeeActivityTracker.StaticWebAssets.Manifest.cache
@@ -154,3 +151,15 @@ F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivi
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.pdb
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.genruntimeconfig.cache
 F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.csprojAssemblyReference.cache
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.AspNetCore.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Extensions.Hosting.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Extensions.Logging.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Formatting.Compact.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Settings.Configuration.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Sinks.Console.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Sinks.Debug.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\bin\Release\netcoreapp3.1\Serilog.Sinks.File.dll
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.csproj.CoreCompileInputs.cache
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.MvcApplicationPartsAssemblyInfo.cs
+F:\projects\c#\EmployeeActivityTrackerApi\EmployeeActivityTracker\EmployeeActivityTracker\obj\Release\netcoreapp3.1\EmployeeActivityTracker.MvcApplicationPartsAssemblyInfo.cache

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EmployeeActivityTracker.Models;
+using Serilog;
 
 namespace EmployeeActivityTracker.Controllers
 {
@@ -102,7 +103,7 @@ namespace EmployeeActivityTracker.Controllers
                     new Activity
                     {
                         Id = 2,
-                        Date = DateTime.Today,
+                        Date = DateTime.Parse("2020-08-03"),
                         HoursOfWork = 5,
                         EmployeeId = 1,
                         ProjectId = 2,
@@ -133,53 +134,82 @@ namespace EmployeeActivityTracker.Controllers
             context.SaveChanges();
         }
 
-        // GET: api/Activities
+        /// <summary>
+        /// Returns all recorded Activities.
+        /// </summary>
+        /// <returns>List of Activities.</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Activity>>> GetActivities()
         {
             return await _context.Activities.ToListAsync();
         }
 
-        // GET: api/Activities/5
+        /// <summary>
+        /// Returns activity by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Activity.</returns>
         [HttpGet("activity/{id}")]
         public async Task<ActionResult<Activity>> GetActivity(int id)
         {
             return await _context.Activities.FindAsync(id);
-            //return (from activity in await _context.Activities.ToListAsync()
-            //    where activity.Id == id
-            //    select activity).FirstOrDefault();
         }
 
         /// <summary>
-        /// Returns activities by employee id and date.
+        /// Returns all employee`s activities per specified date.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     /1/2020-08-07
+        ///
+        /// </remarks>
         /// <param name="employeeId"></param>
         /// <param name="date"></param>
         /// <returns>List of Activities.</returns>
         [HttpGet("day/{employeeId}/{date}")]
         public async Task<ActionResult<List<Activity>>> GetActivitiesPerDay(int employeeId, DateTime date)
         {
-            return await GetActivitiesPerDayFromContext(employeeId, date).ToListAsync();
+            try
+            {
+                return await GetActivitiesPerDayFromContext(employeeId, date).ToListAsync();
+            }
+            catch (Exception)
+            {
+                Log.Error("An error occured during GetActivitiesPerDay request.");
+            }
+
+            return NotFound();
         }
 
+        /// <summary>
+        /// Returns all employee`s activities per specified week.
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <param name="weekNumber"></param>
+        /// <returns>List of Activities.</returns>
         [HttpGet("week/{employeeId}/{weekNumber}")]
         public async Task<ActionResult<List<Activity>>> GetActivitiesPerWeek(int employeeId, int weekNumber)
         {
-            return await GetActivitiesPerWeekFromContext(employeeId, weekNumber).ToListAsync();
+            try
+            {
+                return await GetActivitiesPerWeekFromContext(employeeId, weekNumber).ToListAsync();
+            }
+            catch (Exception)
+            {
+                Log.Error("An error occured during GetActivitiesPerWeek request.");
+            }
+
+            return NotFound();
         }
 
-        // GET: api/ActivitiesReport
         /// <summary>
         /// Returns activities report.
         /// </summary>
         /// <remarks>
         /// Sample request:
         ///
-        ///     report/
-        ///     {
-        ///         "employeeId": 1,
-        ///         "date": 2020-06-08
-        ///     }
+        ///     report/1/2020-08-07
         ///
         /// </remarks>
         /// <param name="employeeId"></param>
@@ -188,35 +218,48 @@ namespace EmployeeActivityTracker.Controllers
         [HttpGet("report/{employeeId}/{date}")]
         public async Task<ActionResult<String>> GetActivitiesReport(int employeeId, DateTime date)
         {
-            var activities = GetActivitiesPerDayFromContext(employeeId, date);
-            var employee = await _context.Employees.FindAsync(employeeId);
-            var report = new StringBuilder($"{date.Date} {employee.Name} ");
-            await using (StringWriter writer = new StringWriter(report))
+            try
             {
-                foreach (Activity activity in activities)
+                var activities = GetActivitiesPerDayFromContext(employeeId, date);
+                var employee = await _context.Employees.FindAsync(employeeId);
+                var report = new StringBuilder($"{date.Date:yyyy-MM-dd} {employee.Name} ");
+                await using (StringWriter writer = new StringWriter(report))
                 {
-                    var employeeRole =
-                        (from role in _context.Roles
-                            where role.Id == activity.RoleId
-                            select role.Name).First();
-                    var projectName =
-                        (from project in _context.Projects
-                         where project.Id == activity.ProjectId
-                         select project.Name).First();
-                    var activityTypeName =
-                        (from activityType in _context.ActivityTypes
-                         where activityType.Id == activity.ActivityTypeId
-                         select activityType.Name).First();
-                    await writer.WriteAsync($"worked as {employeeRole} on the {projectName} {activity.HoursOfWork} hours {activityTypeName}" + (activity.Equals(activities.Last()) ? "" : "\nand " ));
+                    foreach (Activity activity in activities)
+                    {
+                        var employeeRole =
+                            (from role in _context.Roles
+                                where role.Id == activity.RoleId
+                                select role.Name).First();
+                        var projectName =
+                            (from project in _context.Projects
+                                where project.Id == activity.ProjectId
+                                select project.Name).First();
+                        var activityTypeName =
+                            (from activityType in _context.ActivityTypes
+                                where activityType.Id == activity.ActivityTypeId
+                                select activityType.Name).First();
+                        await writer.WriteAsync(
+                            $"worked as {employeeRole} on the {projectName} {activity.HoursOfWork} hours {activityTypeName}" +
+                            (activity.Equals(activities.Last()) ? "" : "\nand "));
+                    }
                 }
+
+                return report.ToString();
+            }
+            catch (Exception)
+            {
+                Log.Error("An error occured while generating the report.");
             }
 
-            return report.ToString();
+            return NotFound();
         }
 
-        // PUT: api/Activities/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Modifies existing Activity.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="activity"></param>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutActivity(int id, Activity activity)
         {
@@ -230,6 +273,7 @@ namespace EmployeeActivityTracker.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+                Log.Information($"Activity #{activity.Id} was modified.");
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -237,26 +281,32 @@ namespace EmployeeActivityTracker.Controllers
                 {
                     return NotFound();
                 }
-                else
-                {
-                    throw;
-                }
+
+                throw;
             }
 
             return NoContent();
         }
 
-        // POST: api/Activities
+        /// <summary>
+        /// Adds new Activity.
+        /// </summary>
+        /// <param name="activity"></param>
         [HttpPost]
         public async Task<ActionResult<Activity>> PostActivity(Activity activity)
         {
             _context.Activities.Add(activity);
             await _context.SaveChangesAsync();
+            Log.Information($" Employee #{activity.EmployeeId} added a new activity.");
 
             return CreatedAtAction("GetActivity", new { id = activity.Id }, activity);
         }
 
-        // DELETE: api/Activities/5
+        /// <summary>
+        /// Deletes activity.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult<Activity>> DeleteActivity(int id)
         {
@@ -268,6 +318,7 @@ namespace EmployeeActivityTracker.Controllers
 
             _context.Activities.Remove(activity);
             await _context.SaveChangesAsync();
+            Log.Information($"Activity #{activity.Id} was deleted.");
 
             return activity;
         }

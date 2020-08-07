@@ -4,12 +4,39 @@
         <name>EmployeeActivityTracker</name>
     </assembly>
     <members>
-        <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.GetActivitiesPerDay(System.Int32,System.DateTime)">
+        <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.GetActivities">
             <summary>
-            Returns activities by employee id and date.
+            Returns all recorded Activities.
+            </summary>
+            <returns>List of Activities.</returns>
+        </member>
+        <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.GetActivity(System.Int32)">
+            <summary>
+            Returns activity by id.
+            </summary>
+            <param name="id"></param>
+            <returns>Activity.</returns>
+        </member>
+        <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.GetActivitiesPerDay(System.Int32,System.DateTime)">
+             <summary>
+             Returns all employee`s activities per specified date.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 /1/2020-08-07
+            
+             </remarks>
+             <param name="employeeId"></param>
+             <param name="date"></param>
+             <returns>List of Activities.</returns>
+        </member>
+        <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.GetActivitiesPerWeek(System.Int32,System.Int32)">
+            <summary>
+            Returns all employee`s activities per specified week.
             </summary>
             <param name="employeeId"></param>
-            <param name="date"></param>
+            <param name="weekNumber"></param>
             <returns>List of Activities.</returns>
         </member>
         <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.GetActivitiesReport(System.Int32,System.DateTime)">
@@ -19,16 +46,32 @@
              <remarks>
              Sample request:
             
-                 report/
-                 {
-                     "employeeId": 1,
-                     "date": 2020-06-08
-                 }
+                 report/1/2020-08-07
             
              </remarks>
              <param name="employeeId"></param>
              <param name="date"></param>
              <returns>String with activity report.</returns>
+        </member>
+        <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.PutActivity(System.Int32,EmployeeActivityTracker.Models.Activity)">
+            <summary>
+            Modifies existing Activity.
+            </summary>
+            <param name="id"></param>
+            <param name="activity"></param>
+        </member>
+        <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.PostActivity(EmployeeActivityTracker.Models.Activity)">
+            <summary>
+            Adds new Activity.
+            </summary>
+            <param name="activity"></param>
+        </member>
+        <member name="M:EmployeeActivityTracker.Controllers.ActivitiesController.DeleteActivity(System.Int32)">
+            <summary>
+            Deletes activity.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>
